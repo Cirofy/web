@@ -1,0 +1,20 @@
+:root {
+  --cf-ink: #0b1424;
+  --cf-ink-soft: #152238;
+  --cf-ink-muted: #3d4f66;
+  --cf-surface: #eef2f6;
+  --cf-surface-elevated: #ffffff;
+  --cf-border: #d5dde8;
+  --cf-profit: #0dbf9b;
+  --cf-profit-dark: #0a9a7d;
+  --cf-profit-on: #ffffff;
+  --cf-profit-soft: #d8f8f0;
+  --cf-loss: #f05252;
+  --cf-loss-soft: #fde8e8;
+  --cf-warn: #e8a317;
+  --cf-accent: #2b6cff;
+  --cf-radius: 12px;
+  --cf-radius-lg: 20px;
+  --cf-font-display: "Sora", system-ui, sans-serif;
+  --cf-font-ui: "Figtree", system-ui, sans-serif;
+}

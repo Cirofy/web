@@ -1,0 +1,5 @@
+{
+  "framework": "nextjs",
+  "installCommand": "npm install -g pnpm@9.15.0 && pnpm install --no-frozen-lockfile",
+  "buildCommand": "pnpm --filter @cirofy/shared build && pnpm --filter @cirofy/web build"
+}

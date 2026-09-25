@@ -1,0 +1,1 @@
+{"name":"cirofy-web-workspace","private":true,"packageManager":"pnpm@9.15.0","scripts":{"dev":"pnpm --filter @cirofy/web dev","build":"pnpm --filter @cirofy/shared build && pnpm --filter @cirofy/web build","start":"pnpm --filter @cirofy/web start","lint":"pnpm --filter @cirofy/web lint"},"engines":{"node":"20.x"}}
