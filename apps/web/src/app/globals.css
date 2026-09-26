@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 210 29% 95%;
+  --foreground: 216 49% 9%;
+  --card: 0 0% 100%;
+  --card-foreground: 216 49% 9%;
+  --primary: 167 87% 40%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 214 24% 93%;
+  --secondary-foreground: 216 49% 9%;
+  --muted: 214 24% 93%;
+  --muted-foreground: 214 25% 32%;
+  --accent: 214 24% 93%;
+  --accent-foreground: 216 49% 9%;
+  --destructive: 0 84% 63%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 216 24% 87%;
+  --input: 216 24% 87%;
+  --ring: 167 87% 40%;
+  --radius: 0.9rem;
+  --profit: 167 87% 40%;
+  --profit-foreground: 0 0% 100%;
+  --profit-soft: 162 67% 91%;
+  --loss: 0 84% 63%;
+  --loss-foreground: 0 0% 100%;
+  --sidebar: 216 49% 9%;
+  --sidebar-foreground: 0 0% 100%;
+  --sidebar-muted: 214 20% 70%;
+  --sidebar-accent: 167 55% 22%;
+  --sidebar-border: 215 28% 18%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background font-sans text-foreground antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .skeleton-shimmer {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--muted)) 0%,
+      hsl(214 24% 97%) 45%,
+      hsl(var(--muted)) 90%
+    );
+    background-size: 200% 100%;
+    animation: skeleton-shimmer 1.4s ease-in-out infinite;
+  }
+
+  /* Ink / sidebar / koyu yüzey — açık muted shimmer yasak */
+  .skeleton-shimmer-on-ink {
+    background: linear-gradient(
+      90deg,
+      hsl(215 28% 16%) 0%,
+      hsl(215 22% 24%) 45%,
+      hsl(215 28% 16%) 90%
+    );
+    background-size: 200% 100%;
+    animation: skeleton-shimmer 1.4s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .skeleton-shimmer {
+      animation: none;
+      background: hsl(var(--muted));
+    }
+
+    .skeleton-shimmer-on-ink {
+      animation: none;
+      background: hsl(215 28% 16%);
+    }
+  }
+}
+
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+@media print {
+  aside,
+  header,
+  nav,
+  [data-print-hide],
+  .print\:hidden {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  main {
+    padding: 0 !important;
+    max-width: none !important;
+  }
+
+  #report-print {
+    break-inside: avoid;
+    width: 100% !important;
+  }
+
+  #report-print .text-muted-foreground {
+    color: #444 !important;
+  }
+
+  #report-print .text-profit,
+  #report-print .text-loss {
+    color: black !important;
+  }
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
